@@ -9,6 +9,9 @@ const pool = new Pool({
   database: process.env.DB_NAME || 'marketpulse',
   user: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASSWORD || 'postgres',
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 async function runMigrations() {
